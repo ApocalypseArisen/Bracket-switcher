@@ -2,8 +2,13 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char *argsv[])
 {
-    cout << "Hello World!" << endl;
+    if(argc == 1)
+    {
+        cout<<"No arguments!"<<endl;
+        return 0;
+    }
+
     return 0;
 }
