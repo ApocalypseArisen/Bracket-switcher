@@ -19,7 +19,6 @@ int main(int argc, char *argsv[])
             cout<<error;
             return 0;
         }
-        converter->getpath();
         switch(*argsv[1])
         {
             case '1':
@@ -30,6 +29,7 @@ int main(int argc, char *argsv[])
             {
                 cout<<"test1"<<endl;
             } break;
+            default: instructions();
         }
         delete converter;
     }

@@ -17,7 +17,76 @@ Bracket::~Bracket()
 //
 void Bracket::conversionup(char ov)
 {
+    int index;
+    int level = 0;
+    bool found = false;
+    string text;
+    getpath();
+    loadfile();
+    for(int i=0; i<data.size(); i++)
+    {
+        text = "";
+        for(int j=0; j<data[i].length(); j++)
+        {
+            if(data[i][j] == '{') found = true, level++, index = j;
+            if(!found && data[i][j] == '}') level--;
+            if(found && data[i][j] == '}') found = false, level--;
+        }
+        if(found)
+        {
+            data[i].erase(data[i].begin() + index);
+            result.push_back(data[i]);
+            for(int j=0; j<level - 1; j++)
+            {
+                text = text + "\t";
+            }
+            text = text + '{';
+            result.push_back(text);
+            found = false;
+        }
+        else result.push_back(data[i]);
+    }
+    try { savefile(ov, 1); }
+    catch (const char *error)
+    {
+        cout<<error;
+    }
+    for(int i=0; i<result.size(); i++) cout<<result[i]<<endl;
+}
 
+//Method loading contents of the file to data structure
+void Bracket::loadfile()
+{
+    string temp;
+    while(!file.eof())
+    {
+        getline(file, temp);
+        data.push_back(temp);
+    }
+    file.close();
+}
+
+//Method saving procesed file
+void Bracket::savefile(char ov, int mode)
+{
+    string newpath;
+    if(ov == 'o')
+    {
+        newpath = path + name + "." + type;
+        const int rs = remove(newpath.c_str());
+        if (rs != 0) throw "Could not delete existing file!\n";
+    }
+    else newpath = path + name + "-cbrsw" + to_string(mode) + "." + type;
+    out.open(newpath);
+    if(out.good())
+    {
+        for(int i=0; i<result.size(); i++)
+        {
+            out<<result[i]<<endl;
+        }
+    }
+    else throw "Could not open result file!\n";
+    cout<<"Conversion successfully finished!"<<endl;
 }
 
 //This method separtes gathers info about the input file. File type, path and name
@@ -76,8 +145,5 @@ void Bracket::getpath()
         }
         path = temp;
     }
-    cout<<path<<endl;
-    cout<<name<<endl;
-    cout<<type<<endl;
 }
 
