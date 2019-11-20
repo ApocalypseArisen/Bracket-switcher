@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        bracket.cpp \
         main.cpp
+
+HEADERS += \
+    bracket.h
