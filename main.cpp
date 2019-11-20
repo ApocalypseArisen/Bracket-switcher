@@ -19,11 +19,12 @@ int main(int argc, char *argsv[])
             cout<<error;
             return 0;
         }
+        converter->getpath();
         switch(*argsv[1])
         {
             case '1':
             {
-                cout<<"test"<<endl;
+                converter->conversionup(argsv[1][1]);
             } break;
             case '2':
             {
