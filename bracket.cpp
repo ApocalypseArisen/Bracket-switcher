@@ -14,6 +14,33 @@ Bracket::~Bracket()
     file.close();
 }
 
+void Bracket::conversiondown(char ov)
+{
+    int index;
+    bool found = false;
+    getpath();
+    loadfile();
+    for(int i=0; i<data.size(); i++)
+    {
+        for(int j=0; j<data[i].length(); j++)
+        {
+            if(data[i][j] == '{') found = true, index = j;
+            if(found && data[i][j] == '}') found = false;
+        }
+        if(found)
+        {
+            result[result.size() - 1] = result[result.size() - 1] + " {";
+            found = false;
+        }
+        else result.push_back(data[i]);
+    }
+    try { savefile(ov, 2); }
+    catch (const char *error)
+    {
+        cout<<error;
+    }
+}
+
 //
 void Bracket::conversionup(char ov)
 {
@@ -51,7 +78,6 @@ void Bracket::conversionup(char ov)
     {
         cout<<error;
     }
-    for(int i=0; i<result.size(); i++) cout<<result[i]<<endl;
 }
 
 //Method loading contents of the file to data structure

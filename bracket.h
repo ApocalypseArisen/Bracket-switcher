@@ -30,6 +30,7 @@ public:
     ~Bracket();
     //methodes
     void conversionup(char ov);
+    void conversiondown(char ov);
 };
 
 #endif // BRACKET_H

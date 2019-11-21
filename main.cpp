@@ -27,7 +27,7 @@ int main(int argc, char *argsv[])
             } break;
             case '2':
             {
-                cout<<"test1"<<endl;
+                converter->conversiondown(argsv[1][1]);
             } break;
             default: instructions();
         }
