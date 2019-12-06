@@ -47,17 +47,33 @@ void Bracket::conversionup(char ov)
     int index;
     int level = 0;
     bool found = false;
+    bool closed = false;
     string text;
     getpath();
     loadfile();
     for(int i=0; i<data.size(); i++)
     {
         text = "";
-        for(int j=0; j<data[i].length(); j++)
+        for(int j = (data[i].length() - 1); j >= 0; j--)
         {
-            if(data[i][j] == '{') found = true, level++, index = j;
-            if(!found && data[i][j] == '}') level--;
-            if(found && data[i][j] == '}') found = false, level--;
+            if(data[i][j] = '}')
+            {
+                level--;
+                closed = true;
+            }
+            if(data[i][j] == '{' && closed)
+            {
+                closed = false;
+                level++;
+                break;
+            }
+            if(data[i][j] == '{')
+            {
+                found = true;
+                level++;
+                index = j;
+                break;
+            }
         }
         if(found)
         {
@@ -172,4 +188,3 @@ void Bracket::getpath()
         path = temp;
     }
 }
-
