@@ -14,6 +14,7 @@ Bracket::~Bracket()
     file.close();
 }
 
+//
 void Bracket::conversiondown(char ov)
 {
     int index;
