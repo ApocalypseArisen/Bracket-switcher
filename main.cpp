@@ -6,7 +6,28 @@ using namespace std;
 //Displays help message
 void instructions()
 {
-    cout<<"Invalid program parameters"<<endl;
+    cout<<"Bracket switcher (cbrsw) help"<<
+    "\nUsage:"<<
+    "\n\nTyping 1 and path to the file will convert files written in style:"<<
+    "\nint main(){"<<
+    "\n}"<<
+    "\n\nInto:"<<
+    "\nint main()"<<
+    "\n{"<<
+    "\n}"<<
+    "\n\nTyping 2 and path to the file will convert files from style:"<<
+    "\nint main()"<<
+    "\n{"<<
+    "\n}"<<
+    "\n\nInto:"<<
+    "\nint main(){"<<
+    "\n}"<<
+    "\n\nExampple of usage:"<<
+    "\ncbrsw 1 file.cpp"<<
+    "\nThis command will result in saving conversion results to file-cbrsw1.cpp"<<
+    "\n\nIt is possible to overide source files by adding o to command like this:"<<
+    "\ncbrsw 1o file.cpp"<<
+    "\nWARNING this option may result in data loss. Use at you own risk.";
 }
 
 //Starting point - handles input parameters
