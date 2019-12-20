@@ -14,7 +14,7 @@ Bracket::~Bracket()
     file.close();
 }
 
-//
+//This method converts brackets form new line style to end of line style
 void Bracket::conversiondown(char ov)
 {
     int index;
@@ -42,7 +42,7 @@ void Bracket::conversiondown(char ov)
     }
 }
 
-//
+//This method converts brackets frome end line style to new line style
 void Bracket::conversionup(char ov)
 {
     int index;
@@ -55,10 +55,8 @@ void Bracket::conversionup(char ov)
     for(int i=0; i<data.size(); i++)
     {
         text = "";
-        //cout<<endl;
         for(int j = data[i].length(); j >= 0; j--)
         {
-            //cout<<data[i][j];
             if(data[i][j] == '{' && !closed)
             {
                 found = true;
@@ -138,7 +136,7 @@ void Bracket::savefile(char ov, int mode)
     cout<<"Conversion successfully finished!"<<endl;
 }
 
-//This method separtes and gathers info about the input file. File type, path and name
+//This method gathers info about the input file. Type, path and name of the file
 void Bracket::getpath()
 {
     string temp = "";

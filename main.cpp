@@ -3,11 +3,13 @@
 
 using namespace std;
 
+//Displays help message
 void instructions()
 {
     cout<<"Invalid program parameters"<<endl;
 }
 
+//Starting point - handles input parameters
 int main(int argc, char *argsv[])
 {
     if(argc == 3)

@@ -25,7 +25,7 @@ private:
     void loadfile();
     void savefile(char ov, int mode);
 public:
-    //Constructor Destructor
+    //Constructor & Destructor
     Bracket(string path);
     ~Bracket();
     //methodes
