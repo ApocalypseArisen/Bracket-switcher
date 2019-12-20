@@ -23,19 +23,24 @@ void Bracket::conversiondown(char ov)
     loadfile();
     for(int i=0; i<data.size(); i++)
     {
-        for(int j=0; j<data[i].length(); j++)
+        for(int j = data[i].length(); j >= data[i].length()/2; j--)
         {
-            if(data[i][j] == '{') found = true, index = j;
-            if(found && data[i][j] == '}') found = false;
+            if(data[i][j] == '{')
+            {
+                found = true;
+                index = j;
+                break;
+            }
+            if(data[i][j] == '\'' || data[i][j] == '\"' || data[i][j] == '}') break;
         }
         if(found)
         {
-            result[result.size() - 1] = result[result.size() - 1] + " {";
+            result[result.size() - 1] = result[result.size() - 1] + "{";
             found = false;
         }
         else result.push_back(data[i]);
     }
-    try { savefile(ov, 2); }
+    try { savefile(ov, 1); }
     catch (const char *error)
     {
         cout<<error;
@@ -49,6 +54,8 @@ void Bracket::conversionup(char ov)
     int level = 0;
     bool found = false;
     bool closed = false;
+    bool comment = false;
+    bool ignore = false;
     string text;
     getpath();
     loadfile();
@@ -57,21 +64,26 @@ void Bracket::conversionup(char ov)
         text = "";
         for(int j = data[i].length(); j >= 0; j--)
         {
+            if(data[i][j] == '\'' || data[i][j] == '\"')
+            {
+                if(!ignore) break;
+                else comment != comment;
+            }
             if(data[i][j] == '{' && !closed)
             {
                 found = true;
-                cout<<i + 1;
                 level++;
                 index = j;
                 break;
             }
-            if(data[i][j] == '}')
+            if(data[i][j] == '}' && !comment)
             {
                 level--;
                 closed = true;
+                ignore = true;
                 continue;
             }
-            if(data[i][j] == '{')
+            if(data[i][j] == '{' && !comment)
             {
                 closed = false;
                 level++;
@@ -79,9 +91,9 @@ void Bracket::conversionup(char ov)
             }
         }
         closed = false;
+        ignore = false;
         if(found)
         {
-            cout<<"oesus"<<endl;
             data[i].erase(data[i].begin() + index);
             result.push_back(data[i]);
             for(int j=0; j<level - 1; j++)
