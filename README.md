@@ -59,13 +59,13 @@ public void SetSensor(string Name, float Left, float Right, float Top, float Bot
     target.FrontExtend  = Front ;
     target.BackExtend   = Back  ;
     if(targetEnemies)
-	{
+    {
         target.DetectOwner      = false;
         target.DetectFriendly	= false;
         target.DetectEnemy      = true;
     }
     else
-	{
+    {
         target.DetectOwner      = true;
         target.DetectFriendly	= true;
         target.DetectEnemy      = false;
