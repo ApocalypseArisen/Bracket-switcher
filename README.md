@@ -9,7 +9,8 @@ If installed using provided **makefile** program can be run by simply calling co
 Runing this program without any parameters or with wrong parametrs will result in displaying help message.
 
 The program omits brackets which are located in fields marked " or '.
-\nInline code:
+
+Inline code:
 
 ```cpp
 if(true) {cout<<"Test"; i = 10; return;}
@@ -73,7 +74,10 @@ public void SetSensor(string Name, float Left, float Right, float Top, float Bot
 ```
 
 Example:
->cbrsw 1 file.cs
+
+```console
+cbrsw 1 file.cs
+```
 
 ### Second mode
 
@@ -108,8 +112,10 @@ void Bracket::loadfile(){
 ```
 
 Example:
->cbrsw 2 file.cpp
 
+```console
+cbrsw 2 file.cpp
+```
 
 ### Overaiding source file
 
@@ -120,9 +126,14 @@ If we run this program on file **example.type** by default bracket switcher will
 1. -cbrsw - added to avoid overraidning any files unintentionally
 
 By adding *o* to the type argument brackte switcher will override the source file.
+
 Example:
-> cbrsw 1o file.cpp
-\nExecuting this command will override the conets of file.cpp replacing them with converted code.
+
+```console
+cbrsw 1o file.cpp
+```
+
+Executing this command will override the conets of file.cpp replacing them with converted code.
 
 **WARNING** This operation is not recomended at this time and may result in data loss. Use with caution and at your own responsibility.
 
@@ -131,19 +142,39 @@ Example:
 This program comes with simple "installer" 
 
 It will copy executable of bracket switcher to:
-> /usr/local/bin
-\nwhich will allow it to be executed anywhere within the system. If you do not wish to do that or do not trust this program you can copy the **cbrsw** file anywhere you want and execute the program by calling it:
-> ./cbrsw 
+
+```console
+/usr/local/bin
+```
+
+which will allow it to be executed anywhere within the system. If you do not wish to do that or do not trust this program you can copy the **cbrsw** file anywhere you want and execute the program by calling:
+
+```console
+./cbrsw 
+```
+
 from the directory you copied it into.
 
 ### Instructions
 
 1. Clone this repository to your computer by runing:
-> git clone https://github.com/ApocalypseArisen/Bracket-switcher.git
+
+```console
+git clone https://github.com/ApocalypseArisen/Bracket-switcher.git
+```
+
 2. Enter your directory by calling:
-> cd br Bracket-switcher
+
+```console
+cd Bracket-switcher
+```
+
 3. Run your this command and enter your password:
-> sudo make
+
+```console
+sudo make
+```
+
 4. Done! You can now run bracket switche anywhere in your system by typing cbrsw in terminal.
 
 ### Modifiyng code
