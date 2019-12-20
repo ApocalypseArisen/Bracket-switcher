@@ -14,6 +14,7 @@ Bracket::~Bracket()
     file.close();
 }
 
+//
 void Bracket::conversiondown(char ov)
 {
     int index;
@@ -54,29 +55,35 @@ void Bracket::conversionup(char ov)
     for(int i=0; i<data.size(); i++)
     {
         text = "";
-        for(int j = (data[i].length() - 1); j >= 0; j--)
+        //cout<<endl;
+        for(int j = data[i].length(); j >= 0; j--)
         {
-            if(data[i][j] = '}')
+            //cout<<data[i][j];
+            if(data[i][j] == '{' && !closed)
+            {
+                found = true;
+                cout<<i + 1;
+                level++;
+                index = j;
+                break;
+            }
+            if(data[i][j] == '}')
             {
                 level--;
                 closed = true;
+                continue;
             }
-            if(data[i][j] == '{' && closed)
+            if(data[i][j] == '{')
             {
                 closed = false;
                 level++;
                 break;
             }
-            if(data[i][j] == '{')
-            {
-                found = true;
-                level++;
-                index = j;
-                break;
-            }
         }
+        closed = false;
         if(found)
         {
+            cout<<"oesus"<<endl;
             data[i].erase(data[i].begin() + index);
             result.push_back(data[i]);
             for(int j=0; j<level - 1; j++)
@@ -131,7 +138,7 @@ void Bracket::savefile(char ov, int mode)
     cout<<"Conversion successfully finished!"<<endl;
 }
 
-//This method separtes gathers info about the input file. File type, path and name
+//This method separtes and gathers info about the input file. File type, path and name
 void Bracket::getpath()
 {
     string temp = "";
