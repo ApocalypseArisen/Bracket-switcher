@@ -133,7 +133,7 @@ Example:
 cbrsw 1o file.cpp
 ```
 
-Executing this command will override the conets of file.cpp replacing them with converted code.
+Executing this command will override the contents of file.cpp replacing them with converted code.
 
 **WARNING** This operation is not recomended at this time and may result in data loss. Use with caution and at your own responsibility.
 
