@@ -163,7 +163,7 @@ from the directory you copied it into.
 git clone https://github.com/ApocalypseArisen/Bracket-switcher.git
 ```
 
-2. Enter your directory by calling:
+2. Enter directory by calling:
 
 ```console
 cd Bracket-switcher
@@ -175,7 +175,7 @@ cd Bracket-switcher
 sudo make
 ```
 
-4. Done! You can now run bracket switche anywhere in your system by typing cbrsw in terminal.
+4. Done! You can now run bracket switcher anywhere in your system by typing cbrsw in terminal.
 
 ### Modifiyng code
 
