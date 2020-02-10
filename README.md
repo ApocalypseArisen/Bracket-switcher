@@ -1,10 +1,14 @@
 # Bracket Switcher (cbrsw)
 
-Simple program aiming at simplyfing conversion of files to your prefered stile of writng code. Only **Linux** version.
+**Windows** version: 
+Simple program aiming at simplyfing conversion of files to your prefered stile of writng code.
+
+**Linux** version: 
+[click here](https://github.com/ApocalypseArisen/Bracket-switcher/tree/LinuxInstaller)
 
 ## Usage
 
-If installed using provided **makefile** program can be run by simply calling command cbrsw from terminal.
+If installed using provided **.exe installer** program can be run by simply calling command cbrsw from cmd or powershell.
 
 Runing this program without any parameters or with wrong parametrs will result in displaying help message.
 
@@ -141,13 +145,13 @@ Executing this command will override the contents of file.cpp replacing them wit
 
 This program comes with simple "installer" 
 
-It will copy executable of bracket switcher to:
+By default it will create a new directory:
 
 ```console
-/usr/local/bin
+C:\Program Files\cbrsw"
 ```
 
-which will allow it to be executed anywhere within the system. If you do not wish to do that or do not trust this program you can copy the **cbrsw** file anywhere you want and execute the program by calling:
+to which main executable will be copied. In addition to that path above will be added to enviromental variable PATH in order to provide access to applictaion from anywhere in system. If you do not wish to do that or do not trust this program you can copy the **cbrsw** file anywhere you want and execute the program by calling:
 
 ```console
 ./cbrsw 
@@ -155,30 +159,24 @@ which will allow it to be executed anywhere within the system. If you do not wis
 
 from the directory you copied it into.
 
+If user provides diffrent path installator will proceed with user path instead od default one.
+
 ### Instructions
 
-1. Clone this repository to your computer by runing:
+1. Download zip from a current branch
 
-```console
-git clone https://github.com/ApocalypseArisen/Bracket-switcher.git
-```
+2. Extract it in location of your choosing
 
-2. Enter directory by calling:
+3. Enter into extracted folder
 
-```console
-cd Bracket-switcher
-```
+4. Run cbrswInstall.exe (administrator priviliges required)
 
-3. Run your this command and enter your password:
+5. Proceed with installer instruction
 
-```console
-sudo make
-```
-
-4. Done! You can now run bracket switcher anywhere in your system by typing cbrsw in terminal.
+6. Done! After a reboot you can now run bracket switcher anywhere in your system by typing cbrsw in terminal.
 
 ### Modifiyng code
 
 Feel free to do anything you want to do with source code of this app as long as you remember to credit me.
 
-Source code is available in branch **code**
+Source code is available in branch **WindowsCode** or **LinuxCode**
