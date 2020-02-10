@@ -185,4 +185,4 @@ sudo make
 
 Feel free to do anything you want to do with source code of this app as long as you remember to credit me.
 
-Source code is available in branch **code**
+Source code is available in branch **LinuxCode** or **WindowsCode**
