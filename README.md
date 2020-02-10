@@ -1,6 +1,10 @@
 # Bracket Switcher (cbrsw)
 
-Simple program aiming at simplyfing conversion of files to your prefered stile of writng code. Only **Linux** version.
+**Linux** version:
+Simple program aiming at simplyfing conversion of files to your prefered stile of writng code.
+
+**Windows** version:
+[click here](https://github.com/ApocalypseArisen/Bracket-switcher/tree/WindowsInstaller)
 
 ## Usage
 
@@ -10,7 +14,7 @@ Runing this program without any parameters or with wrong parametrs will result i
 
 The program omits brackets which are located in fields marked " or '.
 
-Inline code:
+Inline code: 
 
 ```cpp
 if(true) {cout<<"Test"; i = 10; return;}
